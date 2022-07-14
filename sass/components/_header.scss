@@ -1,0 +1,9 @@
+.header {
+  background-color: var(--main-color);
+  border: 1px solid #ececec;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+}

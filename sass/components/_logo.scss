@@ -1,0 +1,31 @@
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.16;
+
+  letter-spacing: 0.03em;
+  color: var(--active-link-color);
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include desktop {
+    font-size: 26px;
+    line-height: 1.19;
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+
+  &--black-color {
+    color: var(--title-color);
+  }
+
+  &--white-color {
+    color: var(--main-color);
+  }
+}
+
+.logo--black-mob {
+  color: var(--title-color);
+}

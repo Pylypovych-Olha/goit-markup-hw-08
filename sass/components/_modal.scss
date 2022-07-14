@@ -1,0 +1,318 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  position: relative;
+
+  top: 50%;
+  left: 50%;
+  max-width: 450px;
+  min-height: 581px;
+  padding: 40px;
+
+  background: var(--main-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include desktop {
+    min-width: 528px;
+    position: absolute;
+  }
+}
+
+.close-icon {
+  width: 11px;
+  height: 11px;
+
+  &:hover,
+  &:focus {
+    fill: var(--active-link-color);
+    border-color: var(--active-link-color);
+  }
+}
+
+.btn-modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  top: 10px;
+  right: 10px;
+
+  background: var(--primary-white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    outline: transparent;
+    border-color: var(--active-link-color);
+    fill: var(--active-link-color);
+  }
+}
+
+.btn-modal:focus + .close-icon {
+  fill: var(--active-link-color);
+}
+
+/*-----------Form-------------*/
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 370px;
+  @include tablet {
+    max-width: 449px;
+  }
+
+  &-title {
+    margin-bottom: 12px;
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--title-color);
+  }
+
+  &-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    & input {
+      margin: 0;
+      padding: 11px 42px;
+      width: 100%;
+
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      border-radius: 4px;
+      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      & ::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.01em;
+
+        color: rgba(117, 117, 117, 0.5);
+      }
+    }
+  }
+
+  &-input:hover,
+  &-input:focus {
+    border-color: var(--active-link-color);
+    outline: transparent;
+  }
+
+  &-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--text-color);
+    margin-bottom: 4px;
+  }
+}
+
+.form-field-comment {
+  flex-direction: column;
+  margin-bottom: 19px;
+}
+
+.comment-area {
+  padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  outline: transparent;
+  background-color: transparent;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.text-policy {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+a {
+  color: var(--first-btn-color);
+}
+
+.submit-btn {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+  align-items: center;
+  text-align: center;
+
+  width: 200px;
+  height: 50px;
+  padding: 10px 55px;
+
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: var(--main-color);
+  background-color: var(--first-btn-color);
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  color: var(--main-color);
+  border-color: transparent;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+}
+
+.privat-policy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal-input {
+  position: relative;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-input {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:hover .icon-input,
+.form-input:focus + .icon-input {
+  fill: var(--active-link-color);
+}
+
+.policy-checkbox {
+  display: block;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.icon-check {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-color);
+  border-radius: 2px;
+  margin-right: 7px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &-link {
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    color: var(--active-link-color);
+    margin-left: 3px;
+    @include desktop {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+}
+
+.checkbox:checked + .icon-check {
+  //background-position: center;
+  //background-repeat: no-repeat;
+  background-image: url(../img/form-icon-check.svg);
+  background-color: var(--active-link-color);
+  background-origin: border-box;
+  //border-color: var(--active-link-color);
+  outline: transparent;
+  background-size: contain;
+}
+
+.checkbox:focus + .icon-check {
+  background-color: transparent;
+  outline: var(--active-link-color);
+  border-color: var(--active-link-color);
+}
