@@ -19,7 +19,7 @@
 
   &__item {
     @include tablet {
-      margin-bottom: 10px;
+      //margin-bottom: 10px;
       &:not(:first-child) {
         margin-bottom: 0;
       }
@@ -68,4 +68,10 @@
   &__mail:focus {
     color: var(--active-link-color);
   }
+}
+.contacts__mail {
+  padding-top: 20px;
+}
+.contacts__tel {
+  padding-bottom: 20px;
 }

@@ -1,7 +1,9 @@
 .subscribe {
+  margin-top: 60px;
   &__form {
-    display: inline-block;
+    //display: inline-block;
     margin-left: auto;
+
     @include desktop {
       display: flex;
     }
@@ -26,7 +28,12 @@
     @media screen and (min-width: 480px) and (max-width: 1199px) {
       width: 450px;
     }
-
+    @include tablet {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
     @include desktop {
       width: 358px;
       margin-right: 12px;
@@ -44,6 +51,9 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     background-color: var(--footer-color);
     margin-bottom: 20px;
+    @include tablet {
+      width: 450px;
+    }
     @include desktop {
       width: 358px;
       margin-right: 12px;
