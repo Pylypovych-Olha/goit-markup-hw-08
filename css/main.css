@@ -195,8 +195,6 @@ img {
     display: flex;
     flex-direction: column;
     margin-left: auto;
-    padding-top: 21px;
-    padding-bottom: 21px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -204,11 +202,13 @@ img {
     display: flex;
     margin-left: auto;
     flex-direction: row;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 0;
   }
 }
 @media screen and (min-width: 768px) {
+  .contacts__item {
+    margin-bottom: 10px;
+  }
   .contacts__item:not(:first-child) {
     margin-bottom: 0;
   }
@@ -216,6 +216,7 @@ img {
 @media screen and (min-width: 1200px) {
   .contacts__item {
     align-items: center;
+    margin-bottom: 0;
   }
   .contacts__item:not(:last-child) {
     margin-right: 30px;
@@ -239,6 +240,8 @@ img {
   .contacts__tel, .contacts__mail {
     font-size: 14px;
     line-height: 1.14;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
 .contacts__tel:hover, .contacts__tel:focus {
@@ -248,12 +251,26 @@ img {
   color: var(--active-link-color);
 }
 
-.contacts__mail {
-  padding-top: 20px;
+@media screen and (min-width: 768px) {
+  .contacts__mail {
+    padding-top: 21px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts__mail {
+    padding-top: 32px;
+  }
 }
 
-.contacts__tel {
-  padding-bottom: 20px;
+@media screen and (min-width: 768px) {
+  .contacts__tel {
+    padding-bottom: 21px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts__tel {
+    padding-bottom: 32px;
+  }
 }
 
 .mob-header-nav {
@@ -1073,6 +1090,11 @@ body.menu-open {
     margin-right: auto;
   }
 }
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+  .footer__container-blocks {
+    margin-bottom: 0;
+  }
+}
 
 .adress {
   font-size: 14px;
@@ -1148,7 +1170,6 @@ body.menu-open {
 @media screen and (min-width: 1200px) {
   .social {
     display: flex;
-    margin-right: 93px;
   }
 }
 .social__icon {
@@ -1174,8 +1195,10 @@ body.menu-open {
   margin-left: 10px;
 }
 
-.subscribe {
-  margin-top: 60px;
+@media screen and (max-width: 1199px) {
+  .subscribe {
+    margin-top: 60px;
+  }
 }
 .subscribe__form {
   margin-left: auto;

@@ -6,26 +6,26 @@
     flex-direction: column;
     margin-left: auto;
     //margin-left: 84px;
-    padding-top: 21px;
-    padding-bottom: 21px;
+    //padding-top: 21px;
+    //padding-bottom: 21px;
   }
   @include desktop {
     display: flex;
     margin-left: auto;
     flex-direction: row;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 0;
   }
 
   &__item {
     @include tablet {
-      //margin-bottom: 10px;
+      margin-bottom: 10px;
       &:not(:first-child) {
         margin-bottom: 0;
       }
     }
     @include desktop {
       align-items: center;
+      margin-bottom: 0;
 
       &:not(:last-child) {
         margin-right: 30px;
@@ -54,8 +54,8 @@
     @include desktop {
       font-size: 14px;
       line-height: 1.14;
-      //padding-top: 32px;
-      //padding-bottom: 32px;
+      padding-top: 32px;
+      padding-bottom: 32px;
     }
   }
 
@@ -70,8 +70,18 @@
   }
 }
 .contacts__mail {
-  padding-top: 20px;
+  @include tablet {
+    padding-top: 21px;
+  }
+  @include desktop {
+    padding-top: 32px;
+  }
 }
 .contacts__tel {
-  padding-bottom: 20px;
+  @include tablet {
+    padding-bottom: 21px;
+  }
+  @include desktop {
+    padding-bottom: 32px;
+  }
 }

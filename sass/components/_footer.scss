@@ -19,6 +19,9 @@
       align-items: baseline;
       margin-bottom: 60px;
       margin-right: auto;
+      @include desktop {
+        margin-bottom: 0;
+      }
     }
   }
 }

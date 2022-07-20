@@ -1,5 +1,7 @@
 .subscribe {
-  margin-top: 60px;
+  @media screen and (max-width: 1199px) {
+    margin-top: 60px;
+  }
   &__form {
     //display: inline-block;
     margin-left: auto;
